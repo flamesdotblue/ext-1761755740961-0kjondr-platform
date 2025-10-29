@@ -1,28 +1,24 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero from './components/Hero';
+import SoundMeter from './components/SoundMeter';
+import Footer from './components/Footer';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-black text-white">
+      <Hero />
+      <main className="relative z-10 container mx-auto px-4 py-12">
+        <section className="max-w-5xl mx-auto">
+          <div className="mb-8 text-center">
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">Real-time Sound Meter</h2>
+            <p className="mt-3 text-neutral-300 max-w-2xl mx-auto">
+              Measure ambient sound levels in your environment using your microphone. Visualize audio in real time and monitor approximate loudness.
+            </p>
+          </div>
+          <SoundMeter />
+        </section>
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
-
-export default App
